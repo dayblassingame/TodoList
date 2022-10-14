@@ -13,15 +13,15 @@ export function App(){
             </container>
             <container className='flexbox_container'>
                 <div className='flexbox_container-item'>
-                    <h4>To-Do</h4>
+                    <h4 className='flexbox_container-item-header'>To-Do</h4>
                     <ul id="todo"></ul>
                 </div>
                 <div className='flexbox_container-item'>
-                    <h4>In Progress</h4>
+                    <h4 className='flexbox_container-item-header'>In Progress</h4>
                     <ul id="inProgress"></ul>
                 </div>
                 <div className='flexbox_container-item'>
-                    <h4>Completed</h4>
+                    <h4 className='flexbox_container-item-header'>Completed</h4>
                     <ul id="completed"></ul>
                 </div>
             </container>
