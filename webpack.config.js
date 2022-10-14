@@ -1,7 +1,8 @@
 const path = require('path');
 
 module.exports = {
-    entry: path.resolve(__dirName, './src/index.js'),
+    mode: "development",
+    entry: path.resolve(__dirname, './src/index.js'),
     devtool: "eval-source-map",
     module: {
         rules: [
@@ -37,7 +38,7 @@ module.exports = {
         filename: 'bundle.js',
     },
     devServer: {
-        port: 0555,
+        port: 5555,
         hot: true,
     },
 };
