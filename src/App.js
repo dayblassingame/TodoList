@@ -4,9 +4,6 @@ import ('./App.scss');
 export function App(){
     //state to hold todo list items
     const [todos, setTodos] = useState(['wash dishes', 'wash car']);
-    const initialTodoList = todos.map((todoItem) =>
-        <li>{todoItem}</li>
-    );
 
     const newTask =(e)=>{
         e.preventDefault();
@@ -18,7 +15,7 @@ export function App(){
         }
 
         //if task is entered add to list and display under todo section
-        setTodos(newTask + todos);
+        todos.push(newTask);
         const todoList = document.getElementById("todo");
         const newTodoLi = document.createElement('li');
         newTodoLi.innerHTML = newTask;
@@ -30,18 +27,22 @@ export function App(){
             <header>
                 <h1 className='logo'>To-do List</h1>
             </header>
-            <container className='sub_container'>
+            <div className='sub_container'>
                 <h2>Add a new task</h2>
                 <form onSubmit={newTask}>
                     <input className='sub_container-input' id='task' type='text'/>
                     <input type='submit'/>
                 </form>
-            </container>
-            <container className='flexbox_container'>
+            </div>
+            <div className='flexbox_container'>
                 <div className='flexbox_container-item'>
                     <h4 className='flexbox_container-item-header'>To-Do</h4>
                     <ul id="todo">
-                        {initialTodoList}
+                        {todos.map((todo,index) => {
+                            return (
+                                <li key={index}>{todo}</li>
+                            );
+                        })}                    
                     </ul>
                 </div>
                 <div className='flexbox_container-item'>
@@ -52,7 +53,7 @@ export function App(){
                     <h4 className='flexbox_container-item-header'>Completed</h4>
                     <ul id="completed"></ul>
                 </div>
-            </container>
+            </div>
         </div>
     );
 }
