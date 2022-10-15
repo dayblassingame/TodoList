@@ -22,7 +22,8 @@ export function App(){
 
         newTodoLiButton.innerHTML = newTask.value;
         newTodoLiButton.addEventListener("dblclick", moveToInProgress);
-       
+        newTodoLiButton.addEventListener("touchend", moveToInProgress);
+
         newTodoLi.classList.add('todoList_item');
         newTodoLi.appendChild(newTodoLiButton);
         todoList.appendChild(newTodoLi);
@@ -43,6 +44,7 @@ export function App(){
 
         newInProgressLiButton.innerHTML = newTaskInProgress;
         newInProgressLiButton.addEventListener("dblclick", moveToCompleted);
+        newInProgressLiButton.addEventListener("touchend", moveToCompleted);
 
         newInProgressLi.appendChild(newInProgressLiButton);
         inProgressList.appendChild(newInProgressLi);
@@ -83,7 +85,7 @@ export function App(){
                     <ul id="todo">
                         {todos.map((todo,index) => {
                             return (
-                                <li className="todoList_item" key={index}><button onDoubleClick={moveToInProgress}>{todo}</button></li>
+                                <li className="todoList_item" key={index}><button onTouchEnd={moveToInProgress} onClick={moveToInProgress}>{todo}</button></li>
                             );
                         })}                    
                     </ul>
