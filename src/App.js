@@ -42,8 +42,27 @@ export function App(){
         const newInProgressLiButton = document.createElement('button');
 
         newInProgressLiButton.innerHTML = newTaskInProgress;
+        newInProgressLiButton.addEventListener("dblclick", moveToCompleted);
+
         newInProgressLi.appendChild(newInProgressLiButton);
         inProgressList.appendChild(newInProgressLi);
+    }
+
+    const moveToCompleted =(e)=>{
+        const completed = [];
+        const newTaskCompleted = e.target.innerHTML;
+        completed.push(newTaskCompleted);
+
+        const deleteItem = e.target.parentElement;
+        deleteItem.remove();
+
+        const completedList = document.getElementById("completed");
+        const completedLi = document.createElement('li');
+        const completedLiButton = document.createElement('button');
+
+        completedLiButton.innerHTML = newTaskCompleted;
+        completedLi.appendChild(completedLiButton);
+        completedList.appendChild(completedLi);
     }
 
     return(
