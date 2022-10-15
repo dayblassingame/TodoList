@@ -7,19 +7,43 @@ export function App(){
 
     const newTask =(e)=>{
         e.preventDefault();
-        const newTask = document.getElementById('task').value
+        const newTask = document.getElementById('task');
 
         //if no task is entered do nothing
-        if(newTask== ""){
+        if(newTask.value== ""){
             return;
         }
 
         //if task is entered add to list and display under todo section
-        todos.push(newTask);
+        todos.push(newTask.value);
         const todoList = document.getElementById("todo");
         const newTodoLi = document.createElement('li');
-        newTodoLi.innerHTML = newTask;
+        const newTodoLiButton = document.createElement('button');
+
+        newTodoLiButton.innerHTML = newTask.value;
+        newTodoLiButton.addEventListener("dblclick", moveToInProgress);
+       
+        newTodoLi.classList.add('todoList_item');
+        newTodoLi.appendChild(newTodoLiButton);
         todoList.appendChild(newTodoLi);
+        newTask.value = "";
+    }
+
+    const moveToInProgress =(e)=>{
+        const inProgress = [];
+        const newTaskInProgress = e.target.innerHTML;
+        inProgress.push(newTaskInProgress);
+
+        const deleteItem = e.target.parentElement;
+        deleteItem.remove();
+
+        const inProgressList = document.getElementById("inProgress");
+        const newInProgressLi = document.createElement('li');
+        const newInProgressLiButton = document.createElement('button');
+
+        newInProgressLiButton.innerHTML = newTaskInProgress;
+        newInProgressLi.appendChild(newInProgressLiButton);
+        inProgressList.appendChild(newInProgressLi);
     }
 
     return(
@@ -40,7 +64,7 @@ export function App(){
                     <ul id="todo">
                         {todos.map((todo,index) => {
                             return (
-                                <li key={index}>{todo}</li>
+                                <li className="todoList_item" key={index}><button onDoubleClick={moveToInProgress}>{todo}</button></li>
                             );
                         })}                    
                     </ul>
