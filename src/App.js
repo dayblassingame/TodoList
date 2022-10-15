@@ -85,7 +85,7 @@ export function App(){
                     <ul id="todo">
                         {todos.map((todo,index) => {
                             return (
-                                <li className="todoList_item" key={index}><button onTouchEnd={moveToInProgress} onClick={moveToInProgress}>{todo}</button></li>
+                                <li className="todoList_item" key={index}><button onTouchEnd={moveToInProgress} onDoubleClick={moveToInProgress}>{todo}</button></li>
                             );
                         })}                    
                     </ul>
