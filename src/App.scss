@@ -43,6 +43,11 @@
                 }
                 text-align: center;
             }
+
+            .todoList_item{
+                display: block;
+                cursor: pointer;
+            }
         }
     }
 }
