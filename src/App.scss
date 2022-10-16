@@ -1,39 +1,103 @@
+$green: rgba(29, 202, 23, 0.849);
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.main_container{
-    width: 100%;
+.display_none{
+    display: none;
+}
 
+.header{
+    height: 6rem;
+    border-bottom: 2px white solid;
 
-    .logo{
+    .logo_container{
+        height: inherit;
+        width: auto;
         text-align: center;
+        padding: 1rem 0rem;
+
     }
+}
+
+.main_content{
+    @media screen and (max-width: 420px){
+        height: 45rem;
+    }
+    width: 100%;
+    height: 30rem;
+    padding: 1rem;
+    background-image: linear-gradient(blue, $green);
 
     .sub_container{
        text-align: center;
        display: block;
        margin: 2rem 0rem;
+       width: auto;
+
+        .sub_container-input{
+            @media screen and (max-width: 420px){
+                margin: 1rem 0rem;
+                width: 70%;
+            }
+
+            display: inline-block;
+            color: gray;
+            width: 55%;
+            height: 2.5rem;
+            margin: 1rem 0.5rem;
+            font-weight: 100;
+            font-size: 1.25rem;
+            font-family: Arial Narrow, sans-serif;
+            padding: 0.5em;
+            border-radius: 5px;
+            border: 1px white solid;
+        }
+
+        ::placeholder{
+            color: #ced6d0;
+            font-weight: 100;
+            font-size: 1.25rem;
+            font-family: Arial Narrow, sans-serif;
+        }
+
+       input[type=submit]{
+            display: inline-block;
+            color: gray;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px white solid;
+            height: 2.5rem;
+            width: 30%;
+       }
     }
 
     .flexbox_container{
-        @media screen and (max-width: 420px){
-            display: block;
-            margin: 2rem 0rem;
-        }
-        width: 100%;
         display: flex;
+        flex-direction: row;
+        height: 20rem;
+        width: 100%;
+
+        @media screen and (max-width: 420px){
+            flex-direction: column;
+            margin: 2rem 0rem;
+            height: 35rem;
+        }
 
         .flexbox_container-item{
             @media screen and (max-width: 420px){
-                width: 100%;
+                width: 90%;
                 display: block;
-                margin: 2rem 0rem;
-                padding: 0rem 2rem;
+                padding: 1rem 2rem;
+                height: 33%;
             }
 
+            overflow-y: auto;
+            margin: 0.5rem;
+            background-color: white;
             width: 33%;
             display: inline-block;
 
@@ -42,12 +106,29 @@
                     text-align: left;
                 }
                 text-align: center;
+                margin: 1rem 0rem;
+                font-family: Arial Narrow, sans-serif;
+                font-weight: 100;
             }
 
-            .todoList_item{
-                display: block;
-                cursor: pointer;
+            .flexbox_container-ul{
+                list-style: none;
+
+                .flexbox_container-listBtn{
+                    padding: 0rem 1rem;
+                    margin: 0.25rem 0.5rem;
+                    height: 2rem;
+                    width: 80%;
+
+                    background-color: white;
+                    border-image: linear-gradient(45deg, blue, green) 1;
+
+                    text-align: left;
+                    font-family:  Arial Narrow, sans-serif;
+                }
             }
+
+            
         }
     }
 }
