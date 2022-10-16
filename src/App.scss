@@ -84,7 +84,7 @@ $green: rgba(29, 202, 23, 0.849);
 
         .flexbox_container-item{
             @media screen and (max-width: 420px){
-                width: inherit;
+                width: 90%;
                 display: block;
                 padding: 1rem 2rem;
             }
@@ -104,12 +104,24 @@ $green: rgba(29, 202, 23, 0.849);
                 font-weight: 100;
             }
 
-            .todoList_item{
-                display: block;
-                cursor: pointer;
+            .flexbox_container-ul{
+                list-style: none;
 
-                
+                .flexbox_container-listBtn{
+                    padding: 0rem 1rem;
+                    margin: 0.25rem 0.5rem;
+                    height: 2rem;
+                    width: 80%;
+
+                    background-color: white;
+                    border-image: linear-gradient(45deg, blue, green) 1;
+
+                    text-align: left;
+                    font-family:  Arial Narrow, sans-serif;
+                }
             }
+
+            
         }
     }
 }

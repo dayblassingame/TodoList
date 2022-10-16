@@ -87,7 +87,7 @@ export function App(){
                 <div className='flexbox_container'>
                     <div className='flexbox_container-item'>
                         <h4 className='flexbox_container-item-header'>To-Do</h4>
-                        <ul id="todo">
+                        <ul id="todo" className="flexbox_container-ul">
                             {todos.map((todo,index) => {
                                 return (
                                     <li className="todoList_item" key={index}><button className='flexbox_container-listBtn' onTouchEnd={moveToInProgress} onDoubleClick={moveToInProgress}>{todo}</button></li>
@@ -97,11 +97,11 @@ export function App(){
                     </div>
                     <div className='flexbox_container-item'>
                         <h4 className='flexbox_container-item-header'>In Progress</h4>
-                        <ul id="inProgress"></ul>
+                        <ul id="inProgress" className="flexbox_container-ul"></ul>
                     </div>
                     <div className='flexbox_container-item'>
                         <h4 className='flexbox_container-item-header'>Completed</h4>
-                        <ul id="completed"></ul>
+                        <ul id="completed" className="flexbox_container-ul"></ul>
                     </div>
                 </div>
             </main>
