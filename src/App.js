@@ -97,11 +97,13 @@ export function App(){
                     </div>
                     <div className='flexbox_container-item'>
                         <h4 className='flexbox_container-item-header'>In Progress</h4>
-                        <ul id="inProgress" className="flexbox_container-ul"></ul>
+                        <ul id="inProgress" className="flexbox_container-ul">
+                        </ul>
                     </div>
                     <div className='flexbox_container-item'>
                         <h4 className='flexbox_container-item-header'>Completed</h4>
-                        <ul id="completed" className="flexbox_container-ul"></ul>
+                        <ul id="completed" className="flexbox_container-ul">
+                        </ul>
                     </div>
                 </div>
             </main>
